@@ -29,7 +29,6 @@ function Maid.new()
 		Objects = {};
 	}
 
-	-- this is cool thanks hutch
 	setmetatable(maid, {
 		__index = function(self, index)
 			if self.Objects[index] ~= nil then
@@ -38,6 +37,7 @@ function Maid.new()
 				return Maid[index]
 			end
 		end;
+		-- this is cool thanks hutch
 		__newindex = function(self, index, value)
 			rawset(self, index, nil)
 			return self:Give(value, index)
